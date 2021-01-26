@@ -21,7 +21,7 @@
             "polyfills": "apps/app/src/polyfills.ts",
             "tsConfig": "apps/app/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/app/src/favicon.ico", "apps/app/src/assets"],
+            "assets": ["apps/app/src/favicon.ico", "apps/app/src/assets", "apps/app/src/manifest.webmanifest"],
             "styles": ["apps/app/src/styles.scss"],
             "scripts": []
           },
@@ -51,7 +51,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/app/ngsw-config.json"
             }
           },
           "outputs": ["{options.outputPath}"]

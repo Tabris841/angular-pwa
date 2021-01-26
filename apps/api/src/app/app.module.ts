@@ -5,12 +5,13 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-console.log(__dirname);
-
 @Module({
   imports: [
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, 'client'),
+      serveStaticOptions: {
+        cacheControl: false,
+      },
     }),
   ],
   controllers: [AppController],
