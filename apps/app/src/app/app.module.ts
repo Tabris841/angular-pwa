@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LessonsComponent } from './lessons/lessons.component';
@@ -13,7 +14,7 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [AppComponent, LessonsComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -21,6 +22,7 @@ import { environment } from '../environments/environment';
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
